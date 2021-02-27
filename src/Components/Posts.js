@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import db from "../Firebase";
 export default function Posts(props) {
-  const [blogs, setBlogs] = useState([]);
-  const fetchBlogs = async () => {
-    const response = db.collection("post");
-    const data = await response.get();
-    data.docs.forEach((item) => {
-      setBlogs([...blogs, item.data()]);
-    });
-  };
+  const [posts, setPosts] = useState();
+
   useEffect(() => {
-    fetchBlogs();
+    return db.collection("post").onSnapshot((snapshot) => {
+      const postData = [];
+      snapshot.forEach((doc) => postData.push({ ...doc.data(), id: doc.id }));
+      setPosts(postData);
+    });
   }, []);
 
   return (
     <div className="App">
-      {blogs &&
-        blogs.map((blog) => {
+      {posts &&
+        posts.map((blog) => {
           return (
             <div class="ui main text container segment">
               <div class="ui huge header">{blog.name}</div>

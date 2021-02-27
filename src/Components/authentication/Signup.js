@@ -2,8 +2,9 @@ import React, { useRef, useState } from "react";
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-
+import db from "../../Firebase";
 export default function Signup() {
+  const x = 1;
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
@@ -21,7 +22,29 @@ export default function Signup() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      const emailuser = emailRef.current.value;
       history.push("/");
+      db.collection("profile")
+        .doc(emailuser)
+        .set(
+          {
+            name: "John Snow",
+            email: emailuser,
+            state: "CAefwefweefwfwefsdscdv",
+            country: "USAwqdqd",
+            followers: "xx",
+            following: "xxx",
+            hobby: "xx",
+            Profession: "xx",
+          },
+          { merge: true }
+        )
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
     } catch {
       setError("Failed to create account");
     }
