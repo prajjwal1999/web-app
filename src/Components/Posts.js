@@ -18,22 +18,30 @@ export default function Posts(props) {
       {blogs &&
         blogs.map((blog) => {
           return (
-            <div className="blog-container">
-              {" "}
-              {blog.uploaded}
-              <div>{blog.name}</div>
-              <div>
-                <img src={blog.url} />
-              </div>
-              <div>
-                <div>{blog.caption}</div>
-              </div>
-              <div className="likes-comment">
-                <div>likes : {blog.like}</div>
-                <div className="comment">
-                  {blog.comment.map((number) => (
-                    <li>{number}</li>
-                  ))}
+            <div class="ui main text container segment">
+              <div class="ui huge header">{blog.name}</div>
+              <div class="ui top attached">
+                <div class="item">
+                  <img class="ui centered rounded image" src={blog.url} />
+                  <div class="content">
+                    <span>Date:12/23/43</span>
+                  </div>
+                  <div class="description">
+                    <p>A beautiful Day</p>
+                  </div>
+                  <a
+                    class="ui blue basic button"
+                    href="/blogs/<%= blog._id %>/edit"
+                  >
+                    Comment
+                  </a>
+                  <form
+                    id="delete"
+                    action="/blogs/<%= blog._id %>?_method=DELETE"
+                    method="POST"
+                  >
+                    <button class="ui red basic button">Like</button>
+                  </form>
                 </div>
               </div>
             </div>
