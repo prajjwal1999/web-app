@@ -20,7 +20,11 @@ export default function Posts(props) {
               <div class="ui huge header">{blog.name}</div>
               <div class="ui top attached">
                 <div class="item">
-                  <img class="ui centered rounded image" src={blog.url} />
+                  <img
+                    class="ui centered rounded image"
+                    src={blog.url}
+                    height="400px"
+                  />
                   <div class="content">
                     <span>Date:12/23/43</span>
                   </div>

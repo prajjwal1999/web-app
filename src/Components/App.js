@@ -1,12 +1,14 @@
 import React from "react";
 import Signup from "../Components/authentication/Signup";
 import Navbar from "../Components/Navbar";
+import Signin from "../Components/authentication/Signin";
 import Login from "../Components/authentication/Login";
 import Posts from "../Components/Posts";
 import CreatePost from "../Components/CreatePost";
 import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
+import Home from "./Home";
 function App() {
   return (
     <div className="App">
@@ -14,11 +16,12 @@ function App() {
       <Router>
         <AuthProvider>
           <Switch>
-            <Route exact path="/" component={Posts} />
+            <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/profile" component={Profile} />
             <Route path="/create-post" component={CreatePost} />
+            <Route path="/signin" component={Signin} />
           </Switch>
         </AuthProvider>
       </Router>

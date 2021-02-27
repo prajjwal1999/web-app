@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { useContext } from "react";
 
-import Profile from "../Components/Profile";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+
 export default function Navbars() {
   return (
     <div>
@@ -19,7 +18,7 @@ export default function Navbars() {
               <div style={{ fontSize: "210%" }}>Home</div>
             </Nav.Link>
 
-            <Nav.Link href="#link">
+            <Nav.Link href="/signup">
               <button type="button" class="btn btn-default btn-lg">
                 <a href="/signup">SignUp</a>
               </button>
@@ -29,12 +28,13 @@ export default function Navbars() {
                 <a href="/profile">Profile</a>
               </button>
             </Nav.Link>
-            <Nav.Link href="#link">
+            <Nav.Link href="login">
               <button type="button" class="btn btn-default btn-lg">
                 LogIn
               </button>
             </Nav.Link>
-            <Nav.Link href="#link">
+
+            <Nav.Link href="profile">
               <button type="button" class="btn btn-default btn-lg">
                 Account
               </button>

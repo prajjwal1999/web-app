@@ -3,7 +3,7 @@ import { Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
-export default function Dashboard() {
+export default function Profile(props) {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
@@ -22,11 +22,15 @@ export default function Dashboard() {
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong>
-
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
-          </Link>
+          <div className="container -lg">
+            <div>{currentUser.displayName}</div>
+            <div>
+              <img src={currentUser.photoURL} />
+            </div>
+            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
+              Update Profile
+            </Link>
+          </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
