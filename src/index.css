@@ -32,3 +32,29 @@ code {
 .boxs {
   padding: auto;
 }
+
+/* NavBar */
+.nav-logo {
+  margin-left: 200px;
+}
+
+.nav-button {
+  margin-right: 200px;
+}
+
+/* Home Page */
+.like span {
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.post-profile {
+  display: flex;
+  text-align: center;
+}
+
+.post-profile .post-profile-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}

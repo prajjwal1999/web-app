@@ -27,7 +27,7 @@ export default function CreatePost() {
   async function handleSubmit(e) {
     db.collection("post").doc().set(
       {
-        caption: "wewejbnj",
+        caption: "sunkissed",
         comment: [],
         url: image,
         like: 0,
