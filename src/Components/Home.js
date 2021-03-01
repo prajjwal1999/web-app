@@ -4,14 +4,14 @@ import User from "../Components/User";
 export default class Home extends Component {
   render() {
     return (
-      <div className="boxs">
-        <div className="row">
-          <User />
-          <div>
+<div>
+
             <Posts />
-          </div>
-        </div>
-      </div>
+          
+
+
+        </div
+
     );
   }
 }

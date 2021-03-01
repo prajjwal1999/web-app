@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Card, Form, Button, Alert } from "react-bootstrap";
 import Posts from "./Posts";
 import db from "../Firebase";
 import { Link, useHistory } from "react-router-dom";
@@ -27,7 +28,7 @@ export default function CreatePost() {
   async function handleSubmit(e) {
     db.collection("post").doc().set(
       {
-        caption: "wewejbnj",
+        caption: "fgdhaljkh",
         comment: [],
         url: image,
         like: 0,
@@ -40,24 +41,42 @@ export default function CreatePost() {
     history.push("/");
   }
   return (
-    <div className="container-lg">
-      <div className="container">
-        <form onSubmit={handleSubmit}>
-          <label for="img">Select image</label>
-          <input
-            type="file"
-            name="file"
-            placeholder="upload image"
-            onChange={uploadImage}
-          />
-          <input
-            type="text"
-            name="caption"
-            placeholder="Caption for your pic"
-          />
-          <button type="submit">Post</button>
-        </form>
-      </div>
-    </div>
+    // <div className="container-lg">
+    //   <div className="container">
+    //     <form onSubmit={handleSubmit}>
+    //       <label for="img">Select image</label>
+    //       <input
+    //         type="file"
+    //         name="file"
+    //         placeholder="upload image"
+    //         onChange={uploadImage}
+    //       />
+    //       <input
+    //         type="text"
+    //         name="caption"
+    //         placeholder="Caption for your pic"
+    //       />
+    //       <button type="submit">Post</button>
+    //     </form>
+    //   </div>
+    // </div>
+    <Card>
+        <Card.Body>
+        <h2 className="text-center mb-4">Create Post</h2>
+        <Form onSubmit={handleSubmit} >
+            <Form.Group id="caption">
+              <Form.Label>caption</Form.Label>
+              <Form.Control name="caption" type="text" required />
+            </Form.Group>
+            <Form.Group id="media">
+              <Form.Label>Add photo</Form.Label>
+              <Form.Control onChange={uploadImage } name="file" type="file"  required />
+            </Form.Group>
+            <button className="w-100" type="submit">
+            Post
+            </button>
+        </Form>
+        </Card.Body>
+    </Card>
   );
 }
