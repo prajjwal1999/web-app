@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import Posts from "../Components/Posts";
+import User from "../Components/User";
 export default class Home extends Component {
   render() {
     return (
       <div className="boxs">
         <div className="row">
-          <div className="column left" style={{ backgroundColor: "#aaa" }}>
+          <User />
+          <div>
             <Posts />
-          </div>
-          <div className="column right" style={{ backgroundColor: "#bbb" }}>
-            <div>
-              <ul></ul>
-            </div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-
+import { useHistory } from "react-router-dom";
 class App extends Component {
   state = { isSignedIn: false };
   uiConfig = {

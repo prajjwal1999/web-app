@@ -3,19 +3,11 @@ import { Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
-export default function Profile(props) {
+export default function User(props) {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
-  async function handleLogout() {
-    setError("");
-    try {
-      await logout();
-      history.push("/login");
-    } catch {
-      setError("Failed to logout");
-    }
-  }
+
   return (
     <div>
       <Card>
@@ -31,16 +23,11 @@ export default function Profile(props) {
                 </div>
               </div>
             ) : (
-              <div>Login Please to access</div>
+              <div></div>
             )}
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        <Button variant="link" onClick={handleLogout}>
-          Log Out
-        </Button>
-      </div>
     </div>
   );
 }
