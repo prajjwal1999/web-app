@@ -5,7 +5,11 @@ import { Link, useHistory } from "react-router-dom";
 export default function CreatePost() {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
+  const [caption, setCaption] = useState("");
   const history = useHistory();
+  const uploadCaption = async (e) => {
+    setCaption(e.target.value);
+  };
   const uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
@@ -25,14 +29,16 @@ export default function CreatePost() {
     setLoading(false);
   };
   async function handleSubmit(e) {
+    e.preventDefault();
+    const str = new Date();
     db.collection("post").doc().set(
       {
-        caption: "sunkissed",
+        caption: caption,
         comment: [],
         url: image,
         like: 0,
         name: "wake",
-        uploaded: "12:36",
+        uploaded: { str },
       },
       { merge: true }
     );
@@ -54,6 +60,7 @@ export default function CreatePost() {
             type="text"
             name="caption"
             placeholder="Caption for your pic"
+            onChange={uploadCaption}
           />
           <button type="submit">Post</button>
         </form>

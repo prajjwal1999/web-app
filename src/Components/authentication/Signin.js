@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import db from "../../Firebase";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { useHistory } from "react-router-dom";
