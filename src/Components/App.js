@@ -9,6 +9,9 @@ import { AuthProvider } from "../contexts/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
 import Home from "./Home";
+import ClipLoader from "react-spinners/ClipLoader";
+import { useState, useEffect } from "react";
+
 function App() {
   return (
     <div className="App">

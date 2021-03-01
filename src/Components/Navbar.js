@@ -4,12 +4,17 @@ import { useAuth } from "../contexts/AuthContext";
 import { useContext } from "react";
 import Profile from "../Components/Profile";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+
 export default function Navbars() {
   return (
     <div>
       <Navbar bg="light" expand="lg">
         <Navbar.Brand className="nav-logo" href="#home">
-          <img src="https://www.flaticon.com/svg/vstatic/svg/52/52134.svg?token=exp=1614572298~hmac=4f1f9b3fd3796cb5c7187185aeb6ab75" />
+          <img
+            src="https://www.flaticon.com/premium-icon/icons/svg/3162/3162261.svg"
+            width="50"
+            height="52"
+          />
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/">
