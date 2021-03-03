@@ -30,12 +30,12 @@ export default function Signup() {
           {
             name: "John Snow",
             email: emailuser,
-            state: "CAefwefweefwfwefsdscdv",
+            post: [],
             country: "USAwqdqd",
-            followers: "xx",
-            following: "xxx",
+            followers: [],
+            following: [],
             hobby: "xx",
-            Profession: "xx",
+            Profession: "ssx",
           },
           { merge: true }
         )

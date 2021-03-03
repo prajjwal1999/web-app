@@ -11,7 +11,7 @@ import Profile from "./Profile";
 import Home from "./Home";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useState, useEffect } from "react";
-
+import Friends from "../Components/Friends";
 function App() {
   return (
     <div className="App">
@@ -25,6 +25,7 @@ function App() {
             <Route path="/profile" component={Profile} />
             <Route path="/create-post" component={CreatePost} />
             <Route path="/signin" component={Signin} />
+            <Route path="/friends" component={Friends} />
           </Switch>
         </AuthProvider>
       </Router>

@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Posts from "./Posts";
 import db from "../Firebase";
 import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 export default function CreatePost() {
   const [loading, setLoading] = useState(false);
+  const { currentUser } = useAuth();
   const [image, setImage] = useState("");
   const [caption, setCaption] = useState("");
   const history = useHistory();
@@ -39,6 +41,20 @@ export default function CreatePost() {
         like: 0,
         name: "wake",
         uploaded: { str },
+      },
+      { merge: true }
+    );
+    const datauser = {
+      caption: caption,
+      comment: [],
+      url: image,
+      like: 0,
+      name: "wake",
+      uploaded: { str },
+    };
+    db.collection("profile").doc(currentUser.uid).set(
+      {
+        post: datauser,
       },
       { merge: true }
     );

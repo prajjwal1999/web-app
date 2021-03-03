@@ -21,7 +21,36 @@ class App extends Component {
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged((user) => {
       this.setState({ isSignedIn: !!user });
-      console.log("user", user);
+      if (user != null) {
+        db.collection("profile")
+          .doc(user.uid)
+          .get()
+          .then((docSnapshot) => {
+            if (!docSnapshot.exists) {
+              db.collection("profile")
+                .doc(user.uid)
+                .set(
+                  {
+                    name: "John Snow",
+                    email: user.email,
+                    post: [],
+                    country: "USAwqdqd",
+                    followers: [],
+                    following: [],
+                    hobby: "xx",
+                    Profession: "ssx",
+                  },
+                  { merge: true }
+                )
+                .then(() => {
+                  console.log("Document successfully writen!");
+                })
+                .catch((error) => {
+                  console.error("Error writing document: ", error);
+                });
+            }
+          });
+      }
     });
   };
 
