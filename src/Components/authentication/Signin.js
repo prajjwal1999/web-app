@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import db from "../../Firebase";
+
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { useHistory } from "react-router-dom";
@@ -21,36 +21,7 @@ class App extends Component {
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged((user) => {
       this.setState({ isSignedIn: !!user });
-      if (user != null) {
-        db.collection("profile")
-          .doc(user.uid)
-          .get()
-          .then((docSnapshot) => {
-            if (!docSnapshot.exists) {
-              db.collection("profile")
-                .doc(user.uid)
-                .set(
-                  {
-                    name: "John Snow",
-                    email: user.email,
-                    post: [],
-                    country: "USAwqdqd",
-                    followers: [],
-                    following: [],
-                    hobby: "xx",
-                    Profession: "ssx",
-                  },
-                  { merge: true }
-                )
-                .then(() => {
-                  console.log("Document successfully writen!");
-                })
-                .catch((error) => {
-                  console.error("Error writing document: ", error);
-                });
-            }
-          });
-      }
+      console.log("user", user);
     });
   };
 
