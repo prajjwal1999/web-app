@@ -39,7 +39,7 @@ export default function CreatePost() {
         comment: [],
         url: image,
         like: 0,
-        name: "wake",
+        name: currentUser.displayName,
         uploaded: { str },
       },
       { merge: true }
@@ -52,12 +52,12 @@ export default function CreatePost() {
       name: "wake",
       uploaded: { str },
     };
-    db.collection("profile").doc(currentUser.uid).set(
-      {
-        post: datauser,
-      },
-      { merge: true }
-    );
+    // db.collection("profile").doc(currentUser.uid).set(
+    //   {
+    //     post: datauser,
+    //   },
+    //   { merge: true }
+    // );
 
     history.push("/");
   }
