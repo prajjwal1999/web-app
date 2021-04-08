@@ -3,6 +3,8 @@ import Posts from "./Posts";
 import db from "../Firebase";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import Navbar from "../Components/Navbar";
+
 export default function CreatePost() {
   const [loading, setLoading] = useState(false);
   const { currentUser } = useAuth();
@@ -33,18 +35,23 @@ export default function CreatePost() {
   async function handleSubmit(e) {
     e.preventDefault();
     const str = new Date();
-    db.collection("post").doc().set(
-      {
-        caption: caption,
-        comment: [],
-        url: image,
-        like: 0,
-        name: "wake",
-        uploaded: { str },
-      },
-      { merge: true }
-    );
-    const datauser = {
+    db.collection("post")
+      .doc()
+      .set(
+        {
+          caption: caption,
+          comment: [],
+          url: image,
+          like: 0,
+          name: "wake",
+          uploaded: { str },
+        },
+        { merge: true }
+      )
+      .then(() => {
+        console.log("added");
+      });
+    const datausers = {
       caption: caption,
       comment: [],
       url: image,
@@ -52,34 +59,39 @@ export default function CreatePost() {
       name: "wake",
       uploaded: { str },
     };
-    db.collection("profile").doc(currentUser.uid).set(
-      {
-        post: datauser,
-      },
-      { merge: true }
-    );
+    db.collection("profile")
+      .doc(currentUser.uid)
+      .set(
+        {
+          post: { ...datausers },
+        },
+        { merge: true }
+      );
 
     history.push("/");
   }
   return (
-    <div className="container-lg">
-      <div className="container">
-        <form onSubmit={handleSubmit}>
-          <label for="img">Select image</label>
-          <input
-            type="file"
-            name="file"
-            placeholder="upload image"
-            onChange={uploadImage}
-          />
-          <input
-            type="text"
-            name="caption"
-            placeholder="Caption for your pic"
-            onChange={uploadCaption}
-          />
-          <button type="submit">Post</button>
-        </form>
+    <div>
+      <Navbar />
+      <div className="container-lg">
+        <div className="container">
+          <form onSubmit={handleSubmit}>
+            <label for="img">Select image</label>
+            <input
+              type="file"
+              name="file"
+              placeholder="upload image"
+              onChange={uploadImage}
+            />
+            <input
+              type="text"
+              name="caption"
+              placeholder="Caption for your pic"
+              onChange={uploadCaption}
+            />
+            <button type="submit">Post</button>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { useContext } from "react";
+
 import Profile from "../Components/Profile";
+
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 
 export default function Navbars() {
+  const { currentUser } = useAuth();
   return (
     <div>
       <Navbar bg="light" expand="lg">

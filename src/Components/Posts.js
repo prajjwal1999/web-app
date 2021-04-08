@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import db from "../Firebase";
-import {
-  Magnifier,
-  MOUSE_ACTIVATION,
-  TOUCH_ACTIVATION,
-} from "react-image-magnifiers";
+import Navbar from "../Components/Navbar";
 
 export default function Posts(props) {
   const [posts, setPosts] = useState();
@@ -24,6 +20,7 @@ export default function Posts(props) {
 
   return (
     <div className="App">
+      <Navbar />
       {posts &&
         posts.map((blog) => {
           return (

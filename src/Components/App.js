@@ -12,10 +12,10 @@ import Home from "./Home";
 import ClipLoader from "react-spinners/ClipLoader";
 import { useState, useEffect } from "react";
 import Friends from "../Components/Friends";
+import SearchBar from "../Components/SearchBar";
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <Router>
         <AuthProvider>
           <Switch>
@@ -26,6 +26,7 @@ function App() {
             <Route path="/create-post" component={CreatePost} />
             <Route path="/signin" component={Signin} />
             <Route path="/friends" component={Friends} />
+            <Route path="/search" component={SearchBar} />
           </Switch>
         </AuthProvider>
       </Router>

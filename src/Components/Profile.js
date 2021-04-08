@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-
+import Navbar from "../Components/Navbar";
+import db from "../Firebase";
 export default function Profile(props) {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
@@ -18,6 +19,7 @@ export default function Profile(props) {
   }
   return (
     <div>
+      <Navbar />
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>

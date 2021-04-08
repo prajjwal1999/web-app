@@ -3,9 +3,12 @@ import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import db from "../../Firebase";
+import Navbar from "../Navbar";
 export default function Signup() {
   const x = 1;
+
   const emailRef = useRef();
+
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
@@ -23,12 +26,13 @@ export default function Signup() {
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
       const emailuser = emailRef.current.value;
+
       history.push("/");
       db.collection("profile")
         .doc(emailuser)
         .set(
           {
-            name: "John Snow",
+            name: "john",
             email: emailuser,
             post: [],
             country: "USAwqdqd",
@@ -52,7 +56,7 @@ export default function Signup() {
   }
   return (
     <div>
-      {" "}
+      <Navbar />
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>

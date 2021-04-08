@@ -3,6 +3,7 @@ import db from "../../Firebase";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { useHistory } from "react-router-dom";
+import Navbar from "../Navbar";
 class App extends Component {
   state = { isSignedIn: false };
   uiConfig = {
@@ -31,7 +32,7 @@ class App extends Component {
                 .doc(user.uid)
                 .set(
                   {
-                    name: "John Snow",
+                    name: user.displayName,
                     email: user.email,
                     post: [],
                     country: "USAwqdqd",
@@ -57,6 +58,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar />
         {this.state.isSignedIn ? (
           <span>
             <div>Signed In!</div>

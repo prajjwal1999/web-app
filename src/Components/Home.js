@@ -4,6 +4,7 @@ import User from "../Components/User";
 import { useState, useEffect } from "react";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
+import Navbar from "../Components/Navbar";
 const override = css`
   display: block;
   margin: 0 auto;
@@ -20,12 +21,19 @@ export default function Home() {
     }, 2000);
   }, []);
   return (
-    <div className="boxs">
-      {loading ? (
-        <ClipLoader color={color} loading={loading} css={override} size={150} />
-      ) : (
-        <Posts />
-      )}
+    <div>
+      <div className="boxs">
+        {loading ? (
+          <ClipLoader
+            color={color}
+            loading={loading}
+            css={override}
+            size={150}
+          />
+        ) : (
+          <Posts />
+        )}
+      </div>
     </div>
   );
 }
