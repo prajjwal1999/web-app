@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import db from "../Firebase";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import "./Friends.css"
 export default function Friends() {
   const { currentUser } = useAuth();
   const [friends, setFriends] = useState();
@@ -14,11 +15,16 @@ export default function Friends() {
   }, []);
 
   return (
-    <div>
-      <ul>
+    <div className="friends">
+      <ul className="friends__list">
         {friends &&
           friends.map((friend) => {
-            return <li>{friend.name}</li>;
+            return (
+              <div className="friend__profile">
+                <li class="list-group-item list-group-item-info">{friend.name}</li>
+                <h2 class="list-group-item-info">View Profile</h2>
+              </div>
+            );
           })}
       </ul>
     </div>
