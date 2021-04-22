@@ -1,7 +1,9 @@
 .friends {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  border: none;
 }
 
 .friends__list {
@@ -9,17 +11,20 @@
   margin: 2%;
   padding: 4%;
   font-size: 20px;
+  width: 13vw;
 }
 .friend__profile {
   display: flex;
   list-style: none;
+  align-items: center;
+  justify-content: center;
+  width: 13vw;
   margin: 2%;
   padding: 4%;
   font-size: 20px;
   border: none;
 }
 
-.friend__profile > h2 {
-  padding: 2%;
-  margin-top: 2%;
+.friend__profile__pic {
+  margin-left: 25px;
 }

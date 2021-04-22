@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Posts from "./Posts";
 import db from "../Firebase";
+import "./CreatePost.css";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 export default function CreatePost() {

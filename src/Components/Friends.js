@@ -16,13 +16,16 @@ export default function Friends() {
 
   return (
     <div className="friends">
+      <h2>FRIENDS</h2>
       <ul className="friends__list">
         {friends &&
           friends.map((friend) => {
             return (
-              <div className="friend__profile">
-                <li class="list-group-item list-group-item-info">{friend.name}</li>
-                <h2 class="list-group-item-info">View Profile</h2>
+              <div class="friend__profile list-group">
+                <a href="#" class="list-group-item list-group-item-action post-profile">
+                <img className="post-profile-img" src='https://images.unsplash.com/photo-1618987688212-90c11ec2c269?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' />
+                  <p style={{paddingLeft:'5px'}} class="mb-1">{friend.name}</p>
+                </a>                
               </div>
             );
           })}

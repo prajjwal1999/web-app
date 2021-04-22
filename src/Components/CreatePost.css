@@ -1,0 +1,9 @@
+.container-lg {
+  display: flex;
+  padding: 10px;
+  width: 20vw;
+  height: 30vh;  
+  align-items: center;
+  justify-content: center;
+  margin-left: 20vw;
+}
