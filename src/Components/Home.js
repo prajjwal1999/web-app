@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { css } from "@emotion/core";
 import ClipLoader from "react-spinners/ClipLoader";
 import Navbar from "../Components/Navbar";
+import Chat from "../Components/Chat";
 const override = css`
   display: block;
   margin: 0 auto;

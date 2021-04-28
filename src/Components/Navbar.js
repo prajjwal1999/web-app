@@ -30,9 +30,19 @@ export default function Navbars() {
                 <a href="/signup">SignUp</a>
               </button>
             </Nav.Link>
+            <Nav.Link href="/signin">
+              <button type="button" class="btn btn-default btn-lg">
+                Sign in 
+              </button>
+            </Nav.Link>
             <Nav.Link href="/profile">
               <button type="button" class="btn btn-default btn-lg">
                 <a href="/profile">Profile</a>
+              </button>
+            </Nav.Link>
+            <Nav.Link href="/friends">
+              <button type="button" class="btn btn-default btn-lg">
+                <a href="/profile">Friends</a>
               </button>
             </Nav.Link>
             <Nav.Link href="/login">

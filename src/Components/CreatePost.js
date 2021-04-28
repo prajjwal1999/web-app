@@ -35,23 +35,18 @@ export default function CreatePost() {
   async function handleSubmit(e) {
     e.preventDefault();
     const str = new Date();
-    db.collection("post")
-      .doc()
-      .set(
-        {
-          caption: caption,
-          comment: [],
-          url: image,
-          like: 0,
-          name: "wake",
-          uploaded: { str },
-        },
-        { merge: true }
-      )
-      .then(() => {
-        console.log("added");
-      });
-    const datausers = {
+    db.collection("post").doc().set(
+      {
+        caption: caption,
+        comment: [],
+        url: image,
+        like: 0,
+        name: currentUser.displayName,
+        uploaded: { str },
+      },
+      { merge: true }
+    );
+    const datauser = {
       caption: caption,
       comment: [],
       url: image,
@@ -59,14 +54,12 @@ export default function CreatePost() {
       name: "wake",
       uploaded: { str },
     };
-    db.collection("profile")
-      .doc(currentUser.uid)
-      .set(
-        {
-          post: { ...datausers },
-        },
-        { merge: true }
-      );
+    // db.collection("profile").doc(currentUser.uid).set(
+    //   {
+    //     post: datauser,
+    //   },
+    //   { merge: true }
+    // );
 
     history.push("/");
   }

@@ -3,6 +3,7 @@ import db from "../Firebase";
 import { Link, useHistory } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import { useAuth } from "../contexts/AuthContext";
+import "./Friends.css";
 export default function Friends() {
   const { currentUser } = useAuth();
   const [friends, setFriends] = useState();
@@ -15,19 +16,19 @@ export default function Friends() {
   }, []);
 
   return (
-    <div className="conatiner my-4">
-      <Navbar />
-      <ul id="friend-list">
-        <div>
-          {friends &&
-            friends.map((friend) => {
-              return (
-                <li className="friend selected">
-                  <div> {friend.name}</div>
+    <div className="friends">
+      <ul className="friends__list">
+        {friends &&
+          friends.map((friend) => {
+            return (
+              <div className="friend__profile">
+                <li class="list-group-item list-group-item-info">
+                  {friend.name}
                 </li>
-              );
-            })}
-        </div>
+                <h2 class="list-group-item-info">View Profile</h2>
+              </div>
+            );
+          })}
       </ul>
     </div>
   );

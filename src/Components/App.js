@@ -13,6 +13,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { useState, useEffect } from "react";
 import Friends from "../Components/Friends";
 import SearchBar from "../Components/SearchBar";
+import Chat from "../Components/Chat";
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
             <Route path="/signin" component={Signin} />
             <Route path="/friends" component={Friends} />
             <Route path="/search" component={SearchBar} />
+            <Route path="/chat" component={Chat} />
           </Switch>
         </AuthProvider>
       </Router>
