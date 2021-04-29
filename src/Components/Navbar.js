@@ -32,7 +32,7 @@ export default function Navbars() {
             </Nav.Link>
             <Nav.Link href="/signin">
               <button type="button" class="btn btn-default btn-lg">
-                Sign in 
+                Sign in
               </button>
             </Nav.Link>
             <Nav.Link href="/profile">
@@ -53,6 +53,11 @@ export default function Navbars() {
             <Nav.Link href="/create-post">
               <button type="button" class="btn btn-default btn-lg">
                 Create post
+              </button>
+            </Nav.Link>
+            <Nav.Link className="" href="#link">
+              <button type="button" class="btn btn-default btn-lg">
+                <a href="/chat">Chat</a>
               </button>
             </Nav.Link>
           </Nav>
