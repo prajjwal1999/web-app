@@ -1,4 +1,4 @@
-# Social Web-app link : [Deployed at]{https://let-be-friends.herokuapp.com/} : https://let-be-friends.herokuapp.com/
+# Social Web-app link : [Deployed at](https://let-be-friends.herokuapp.com/): https://let-be-friends.herokuapp.com/
 
 ## Overview
 
