@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Social Nerworking
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Social Networking is a web app where one can post your content and chat with friends too.
 
-In the project directory, you can run:
+--------------------------------------------------------------------------------------------------------------
+## Project Submission Details:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* *Names of Project Members/Contributors:*
+ 
+	* Prajjwal Singh (185081)
+	* Azhan Ali (185096)
+	* Dhruv Swami (185089)
+	* Parth (185048)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* *Course:*  CSD-327 Software Engineering LAB
+* *Date:* May 6th, 2021
+* *Submitted to:* Dr. Dharmendra Prasad Mahto
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---------------------------------------------------------------------------------------------------------------
+## Tasks Completed:
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Phase 1:
+ * Learnt required Tech Stack.
+ * Prepared flowchart on how to implement the code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Phase 2:
+ * Implemented user login & registration*.
+ * Ensured unique user-id for each user login into the system.
+ * Implemented Database storage for user records.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Phase 3:
+ * Implemented navigation filed of the app.
+ * Implemented home page and create post filed to add post and display it.
+ * Ensured database security among users.
 
-### `npm run eject`
+### Phase 4:
+ * Implemented home page UI.
+ * Implemented other signin authentications via google github and facebook.
+ * Added required UI template and made a friends section t add friends and see whoe's active.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Phase 5 (Final):
+ * Added chat feature to it and made the required UI for it.
+ * Ensured proper code as well as installation documentation for Application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Techology Stack:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ * Frontend and Backend: React JS
+ * Database: Firebase
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Project Requirements:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation Guide
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### How to run the Web App:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Clone the project using this command:
 
-### Analyzing the Bundle Size
+	git clone https://github.com/azhanali/web-app.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Move to project folder `web-app` in Terminal using command:
 
-### Making a Progressive Web App
+	cd Web-App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Then run following Commands :
 
-### Advanced Configuration
+	npm install
+  	npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Now enter following URL in Your Browser Installed On Your PC:
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+	http://127.0.0.1:8000/
